@@ -46,7 +46,7 @@
 			add(_bolts);
 			_playerBullets = new FlxGroup();
 			add(_playerBullets);
-			_player = new Player(FlxG.width / 2, 0, _playerBullets, _bolts);
+			_player = new Player(FlxG.width / 2 - Player.WIDTH / 2, 0, _playerBullets, _bolts);
 			_player.y = FlxG.height - _player.height;
 			_player.addEventListener(Player.KILLED, onPlayerKilled); 
 			add(_player);

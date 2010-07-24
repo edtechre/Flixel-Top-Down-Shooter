@@ -11,6 +11,8 @@
 	public class Player extends FlxSprite implements IEventDispatcher
 	{	
 		public static const KILLED:String = "Killed";
+		public static const WIDTH:uint = 32;
+		public static const HEIGHT:uint = 48;
 		
 		private var _speed:Number = 180;
 		private var _currBullet:int = 0;
@@ -28,7 +30,7 @@
 			_dispatcher = new EventDispatcher(this);
 			_bullets = Bullets;
 			//loadGraphic(ImgPlayer, true, true, 32, 48);
-			createGraphic(32, 48, 0xffffffff);
+			createGraphic(WIDTH, HEIGHT, 0xffffffff);
 			color = Game.RED;
 			_bitmap = new Bitmap(_framePixels);
 			_bolts = Bolts;
@@ -76,7 +78,7 @@
 			_bolts.y = y;
 			
 			if (FlxG.keys.justPressed("A")) {
-				var bX:int = x + width / 2;
+				var bX:int = x + width / 2 - Bullet.WIDTH / 2;
 				var bY:int = y - height / 2 + 16;
 				var bullet:Bullet = new Bullet(bX, bY, 0, _bulletSpeed, color, true);
 				_bullets.add(bullet);

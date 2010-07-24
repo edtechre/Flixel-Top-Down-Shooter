@@ -16,6 +16,7 @@
 		private var originX:int;
 		private var originY:int;
 		private var glowColor:uint;
+		private var offsetX:uint = 1;
 		
 		public function Lightning():void
 		{
@@ -25,12 +26,12 @@
 		}
 		
 		public function SetOrigin(origin:FlxPoint):void {
-			originX = origin.x;
+			originX = origin.x + offsetX;
 			originY = origin.y;
 		}
 		
 		public function SetTarget(target:FlxPoint):void {
-			targetX = target.x;
+			targetX = target.x + offsetX;
 			targetY = target.y;
 		}
 		
@@ -52,8 +53,7 @@
 			var canvas:Shape = new Shape();
 			var scrollX:int = FlxG.scroll.x;
 			var scrollY:int = FlxG.scroll.y;
-			if (Math.random() < .8)
-			{
+			if (Math.random() < .8) {
 				var boltOrigin:FlxPoint = new FlxPoint(originX, originY)
 				var dx:int = boltOrigin.x - (targetX+scrollX);
 				var dy:int = boltOrigin.y - (targetY+scrollY);
@@ -68,20 +68,19 @@
 				var linethickness:Number = 3;
 				var alpha:Number = 0;
 				var timer:Number = 20;
-				while (traveled < dist - 10)
-				{
-						var speed:Number = Math.random()*2 + 30;
-						var tmpAngle:Number = theAngle * Math.PI / 180;
-						var bx:int = traveled * Math.cos (tmpAngle);
-						var by:int = traveled * Math.sin (tmpAngle);
-						traveled += speed;
-						var theX:Number = (boltOrigin.x - bx) + Math.random () * 25 - 13;
-						var theY:Number = (boltOrigin.y - by) + Math.random () * 25 - 13;
-						
-						canvas.graphics.lineStyle (linethickness, 0xFFFFFF, 1);
-						canvas.graphics.lineTo (theX, theY);
-						linethickness -= 1;
-						alpha += .25;
+				while (traveled < dist - 10) {
+					var speed:Number = Math.random()*2 + 30;
+					var tmpAngle:Number = theAngle * Math.PI / 180;
+					var bx:int = traveled * Math.cos (tmpAngle);
+					var by:int = traveled * Math.sin (tmpAngle);
+					traveled += speed;
+					var theX:Number = (boltOrigin.x - bx) + Math.random () * 25 - 13;
+					var theY:Number = (boltOrigin.y - by) + Math.random () * 25 - 13;
+					
+					canvas.graphics.lineStyle (linethickness, 0xFFFFFF, 1);
+					canvas.graphics.lineTo (theX, theY);
+					linethickness -= 1;
+					alpha += .25;
 				}
 				canvas.graphics.lineTo (targetX+scrollX, targetY+scrollY);
 				canvas.graphics.endFill();

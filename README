@@ -5,4 +5,4 @@ Enemies are defined in an XML file along with the time they are to be created at
 
 The SpaceBackground class is used to create a scrolling background bitmap with stars drawn on it dynamically.  Two scrolling backgrounds are used in the game.
 
-Pressing "A" shoots a bullet.  "S" toggles the player ship between red and blue states.  "D" fires a laser canon which uses flash.filters.GlowFilter to create a lightning effect.
+Pressing "A" shoots a bullet.  "S" toggles the player ship between red and blue states.  "D" fires a laser canon which uses flash.filters.GlowFilter to create a lightning effect.  The effect creates some slowdown and needs to be optimized or converted to a static animation.
