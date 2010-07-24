@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<levels>
+	<level>
+		<enemies>
+			<enemy type="SimpleEnemy" x="320" time="1000" />
+			<enemy type="SimpleEnemy" x="260" red="1" time="1200" />
+			<enemy type="SimpleEnemy" x="350" time="1500" />
+			<enemy type="SimpleEnemy" x="300" time="1800" />
+			<enemy type="SimpleEnemy" x="180" time="2000" />
+			<enemy type="SimpleEnemy" x="400" time="2100" />
+			<enemy type="BounceEnemy" x="400" time="2300" />
+		</enemies>
+	</level>
+</levels>
