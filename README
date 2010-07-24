@@ -1,6 +1,7 @@
-The start of an engine for a top down shooter using Flixel.
+The start of an engine for a top down shooter using Flixel, a 2D game framework written for Flash:
+http://flixel.org/
 
-Enemies are defined in an XML file along with the time they are to be created at-- the time is defined as the number of seconds after the start of the game.  The XML file is compiled into the SWF.  The enemy XML nodes are placed into a min-heap, and are ordered by their time attribute.  The min-heap is queried using a timer that runs every 100ms.  Enemy instances are spawned based the results returned by the min-heap.
+Enemies are defined in an XML file along with the time they are to be created at-- the time is defined as the number of seconds after the start of the game.  The XML file is compiled into the SWF.  The enemy XML nodes are placed into a min-heap, and are ordered by their time attribute.  The min-heap is queried using a timer that runs every 100ms.  Enemy instances are spawned based upon the results returned by the min-heap.
 
 The SpaceBackground class is used to create a scrolling background bitmap with stars drawn on it dynamically.  Two scrolling backgrounds are used in the game.
 
